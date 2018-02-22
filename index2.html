@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userPrompt =  prompt("enter a choice:");
+
+const getUserChoice = userInput => {
+    userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'lizard' || userInput === 'spock') {
+        return userInput;
+        console.log('hey');
+    } else {
+        console.log('Error!');
+    }
+};
+
+function getComputerChoice() {
+    switch (Math.floor(Math.random() * 5)) {
+        case 0:
+            return 'rock';
+        case 1:
+            return 'paper';
+        case 2:
+            return 'scissors';
+        case 3:
+            return 'lizard';
+        case 4:
+            return 'spock';
+
+    }
+};
+
+function determineWinner(userChoice, computerChoice) {
+    userChoice = getUserChoice(userPrompt);
+    if (userChoice === computerChoice) {
+        return 'The game is a tie!';
+    } else if (userChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            return 'paper covers rock! Computer Won!';
+        } else if (computerChoice === 'spock') {
+            return 'spock vaporizes rock! Computer Won!';
+        } else if (computerChoice === 'lizard') {
+            return 'rock crushes lizard! You Won!';
+        } else if (computerChoice === 'scissors') {
+            return 'rock beats scissors! You Won!';
+        }
+    } else if (userChoice === 'paper') {
+        if (computerChoice === 'rock') {
+            return 'paper covers rock! You Won!';
+        } else if (computerChoice === 'spock') {
+            return 'paper disproves Spock! You Won!';
+        } else if (computerChoice === 'lizard') {
+            return 'lizard eats paper! Computer Won!';
+        } else if (computerChoice === 'scissors') {
+            return 'scissor cuts paper! Computer Won!';
+        }
+    } else if (userChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            return 'Rock beats scissors! Computer Won!';
+        } else if (computerChoice === 'spock') {
+            return 'Spock smashes scissors! Computer Won!';
+        } else if (computerChoice === 'lizard') {
+            return 'scissors decapitates lizard! You Won!';
+        } else if (computerChoice === 'paper') {
+            return 'scissors cuts paper! You Won!';
+        }
+    }
+    else if (userChoice === 'lizard') {
+        if (computerChoice === 'rock') {
+          return 'Rock crushes lizard! Computer Wins!';
+        } else if (computerChoice === 'spock') {
+          return 'Lizard poisons Spock! You Won!';
+        } else if (computerChoice === 'paper') {
+          return 'Lizard eats paper! You Won!';
+        } else if (computerChoice === 'scissors') {
+          return 'Scissors decapitates lizard! Computer Won!';
+        } 
+      }
+      else if (userChoice === 'spock') {
+        if (computerChoice === 'rock') {
+          return 'Spock vaporizes rock! You Won!';
+        } else if (computerChoice === 'lizard') {
+          return 'Lizard poisons Spock! Computer Wins!';
+        } else if (computerChoice === 'paper') {
+          return 'Paper disproves Spock! Computer Wins!';
+        } else if (computerChoice === 'scissors') {
+          return 'Spock smashes scissors You Won!';
+        } 
+      }
+
+}
+
+
+const playGame = () => {
+    userChoice = getUserChoice(userPrompt);
+    computerChoice = getComputerChoice();
+    console.log(determineWinner(userChoice, computerChoice));
+    
+}
+playGame();
+    </script>
+</body>
+</html>

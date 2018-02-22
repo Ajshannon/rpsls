@@ -1,0 +1,39 @@
+
+html {
+    background-color: aliceblue;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 50px;
+    flex-basis: 1;
+}
+
+.flex-container>button {
+    background-color: #f1f1f1;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 5px;
+}
+
+.flex-container>button>img {
+    color: #171e42;
+    margin: 5px;
+    object-fit: cover;
+    overflow: hidden;
+    max-height: 200px;
+    border-radius: 15px;
+}
